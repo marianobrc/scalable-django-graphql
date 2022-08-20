@@ -13,6 +13,13 @@ import os
 from pathlib import Path
 from distutils.util import strtobool
 
+# FixMe: Workaround to support graphene-django in Django 4.1
+# Keep until this fix in released https://github.com/graphql-python/graphene-django/pull/1275
+import django
+from django.utils.encoding import force_str
+django.utils.encoding.force_text = force_str
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
@@ -39,7 +46,8 @@ DJANGO_APPS = [
     'django.contrib.staticfiles',
 ]
 THIRD_PARTY_APPS = [
-
+    'storages',
+    'graphene_django',
 ]
 
 LOCAL_APPS = [

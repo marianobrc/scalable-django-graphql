@@ -171,3 +171,8 @@ AWS_ACCOUNT_ID = os.getenv("AWS_ACCOUNT_ID", "000000000000")
 AWS_REGION_NAME = os.getenv("AWS_REGION_NAME", "us-east-1")
 AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID", "FAKEABCDEFGHIJKLMNOP")
 AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY", "FAKE7NiynG+TogH8Nj+P9nlE73sq3")
+
+
+GRAPHENE = {
+    "SCHEMA": "products.schema.schema"
+}

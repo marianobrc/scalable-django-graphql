@@ -176,7 +176,7 @@ AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY", "FAKE7NiynG+TogH
 
 
 GRAPHENE = {
-    "SCHEMA": "products.schema.schema",
+    "SCHEMA": "graph.schema.schema",
     "MIDDLEWARE": [
         "graphql_jwt.middleware.JSONWebTokenMiddleware",
     ],

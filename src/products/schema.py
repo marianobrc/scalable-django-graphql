@@ -20,4 +20,8 @@ class Query(graphene.ObjectType):
         return Product.objects.filter(title__icontains=search)
 
 
+class Mutation(graphene.ObjectType):
+    pass
+
+
 schema = graphene.Schema(query=Query)

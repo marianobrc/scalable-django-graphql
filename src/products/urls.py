@@ -1,6 +1,8 @@
 from django.urls import path
-from graphene_django.views import GraphQLView
+from graph.schema import schema
+from graph.views import PrivateGraphQLView
+
 
 urlpatterns = [
-    path("graphql/", GraphQLView.as_view(graphiql=True)),
+    path("graphql/", PrivateGraphQLView.as_view(graphiql=True, schema=schema)),
 ]

@@ -14,9 +14,13 @@ class Query(graphene.ObjectType):
     product_search = graphene.List(ProductType, search=graphene.String())
 
     def resolve_products(self, info):
+        if not info.context.user.is_authenticated:
+            return Product.objects.none()
         return Product.objects.all()
 
     def resolve_product_search(self, info, search):
+        if not info.context.user.is_authenticated:
+            return Product.objects.none()
         return Product.objects.filter(title__icontains=search)
 
 
